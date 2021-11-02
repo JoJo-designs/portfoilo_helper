@@ -1,0 +1,55 @@
+/* Elements On Each page */
+
+/* colour saved as viriables */
+:root {
+    --orange: #DDBE90;
+    --white: white;
+    --red: #a14343;
+    --rosy: rgb(209, 88, 88);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+main {
+    width: 100%;
+    background-color: var(--white);
+}
+
+body {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+button {
+    border: none;
+    font-size: 30px;
+    margin:  15px;
+    background-color: var(--white);
+    color: var(--red);
+}
+
+h1 {
+    margin: 0 auto;
+    max-width: 80%;
+    font-size: 40px;
+    color: var(--red);
+}
+
+p {
+    margin: 10px auto;
+    max-width: 80%;
+    text-align:  left;
+}
+
+.container {
+    text-align: center;
+}
+
+img {
+    margin: 10px;
+    max-width: 90%;
+}
