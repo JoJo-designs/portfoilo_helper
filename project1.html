@@ -8,34 +8,113 @@
     <main>
     <body>
         <button class="exit" onclick="self.close()">X</button>
-        <h1>Colour Book</h1>
-        <p>The Designer Guide to colour is a book that would be a good resource for people who call 
-        themselves creative and work in creative professions. all the text inside this made up book 
-        is from another book about colour. All the text should be seen as placeholder text. </p>
+        <div class="descr">
+        <h1 class="title">Colour Book</h1>
+        <button class="displayDes" onClick="showDis()">+</button> 
+            <div id="descrText">
+            
+            <p class="showText" >The task was to create a coffee table style book about a topic that 
+                could be realistically turned into a book. I choose to make a book about colour. I 
+                designed the book to be minimal so the colours could be the main focus. </p>
+
+            <p class="showText" >The Designer Guide to colour would be a book that would be a good resource 
+                for people who call themselves creatives and work in creative professions. All the text inside 
+                this made up book is from another book about colour. All the text should be seen as 
+                placeholder text. </p>
+
+            </div>
+
         
-        <div class="container">
-                <img src="image/img2.jpg">
-                <p> When designing to cover of the book I wanted something simple and colourful 
-                    The front has an image of a flower that has been edited to be rainbow colours. 
-                    A grid with black boarders plus one square in the grid are black which add more 
-                    more interest to the cover. The single black square is also where the text on the 
-                    front cover is. The back cover is also simple, it is mostly a solid colour background 
-                    which is broken up by an image of colourful houses and a short decription of the book.  </p>
 
-            <img src="image/img3.jpg">
-                <p>The inside pages are also relatively simple but colourful. The introduction pages has 
-                    an image of some paint rollers that make it look like the mostly white page is being 
-                    painted. The other page is flooded with a bright green and the eyes are drawn to a 
-                large Quote in a red-orange. Under the quote is some opening text. I keep most of the text 
-             close to the bottom half of the page to leave a lot of white space for the eyes to rest on</p>
-
-            <img src="image/img4.jpg">
-            <p> Chapter opener pages are similar to the introduction page. The first page has a coloured 
-                background then followed with a white page. This particular chapter is about colour forecasts 
-                and it features an image of colourful umbrellas which I think are part of an art installation 
-                somewhere. I think that the image fit really well. 
-            </p>
+            
         </div>
+         <!-- Slideshow container -->
+    <div class="slideshow-container">
+    
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="image/img2.jpg" style="width:100%">
+          <div class="text">The cover of the book is colourful. The front has a flower that had been edited
+            to be many colours. The flower was boring on its own so I created a grid pattern with a black
+            background the break the image up and. One of the grid components is also filled in, this is where 
+            I put the title and authors name. The back cover is a solid red orange colour with a picture of 
+            colourful houses and a short description of the book. </div>
+        </div>
+      
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="image/img3.jpg" style="width:100%">
+          <div class="text">The introduction page would be one of the first things a reader would see.
+              I used a image of paint rollers on a plain white background and contrasted it by the opposite page
+              which has a solid green background. The text on this page is near the bottom of the page to give 
+            alot of breathing room for the readers eyes. A quote is placed above the main body text in larger red text. 
+          </div>
+        </div>
+      
+       <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="image/img4.jpg" style="width:100%">
+          <div class="text"> Pages that are in the center of the book also follow the same design principles
+               as the other pages. The chapter opener for colour forecasting has a solid orange page contrasted 
+               with a plain white page. An image of colourful umbrellas can also be found on this page.
+               </div>
+        </div>
+      
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+      
+      <!-- The dots/circles -->
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+      </div>
+
+
+      <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        
+        // Next/previous controls
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        // Thumbnail image controls
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1} 
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none"; 
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block"; 
+          dots[slideIndex-1].className += " active";
+        }
+
+        function showDis() {
+            let show = document.getElementById("descrText");
+            if (show.style.display === "none") {
+             show.style.display = "block";
+            } else {
+             show.style.display = "none";
+            }  
+        }
+
+        </script>
     </body>
 </main>
 </html>
