@@ -1,11 +1,152 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Colour Book</title>
+        <title>Decora</title>
     </head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <main>
     <body>
-        <button onclick="self.close()">X</button>
-        <h1>this is a page for data</h1>
+        <button class="exit" onclick="self.close()">X</button>
+        <div class="descr">
+        <h1 class="title">Decora Home</h1>
+        <button class="displayDes" onClick="showDis()">+</button> 
+            <div id="descrText">
+            
+            <p class="showText">The goal of this student project was to create the branding for a high end home 
+                and decor store. The store would sell paint, wallpaper and home decor. </p>
+
+            <p class="showText">Decora is a store that would specialize in home good and paints. The name 
+                was inspired by a fashion style of the same name where more contrasting colours and accessories 
+                is a must. It is very colourful and fun. The style is overly busy which doesn't really match the 
+                final product. </p>
+
+                <p class="showText">I choose to use round letters for this project. I think this gives it a youthful
+                  look but still clean and professional. This is one of my favorite projects that I have worked on.  </p>
+
+            </div> 
+        </div>
+
+        
+         <!-- Slideshow container -->
+    <div class="slideshow-container">
+          <!-- The dots/circles -->
+      
+          <div  class="dotContainer">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+        <span class="dot" onclick="currentSlide(4)"></span> 
+        <span class="dot" onclick="currentSlide(5)"></span> 
+        <span class="dot" onclick="currentSlide(6)"></span> 
+        <span class="dot" onclick="currentSlide(73)"></span> 
+      </div>
+    
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+          <img src="image/img17.jpg" style="width:100%" alt="Decora logo on a light and dark background.">
+          <div class="text">The logo is on both a dark and light coloured backgrounds. I made the logo with very round and
+                friendly letters. The triangle over the D in the name represents a house.</div>
+        </div>
+      
+        <div class="mySlides fade">
+          <img src="image/img11.jpg" style="width:45%" alt="a poster that had a blue and white room and the decora logo plus a list of services.">
+          <div class="text">This simple design was mostly just for my portfolio website. I am using it as the thumbnail 
+              image for this project. I liked the way it trued out so I decided to display it alone with everything else.
+              I think it would be good to use as a poster that is hung in the stores front window.
+          </div>
+        </div>
+      
+       <div class="mySlides fade">
+          <img src="image/img12.jpg" style="width:60%" alt="booklet cover with image of three pink balloons on a pink background. The cover reads for the love of pink.">
+          <div class="text"> This is a cover for a booklet of colours that would be available. I wanted each booklet to 
+              focus on one colour. I found this fantastic image of three different pink balloons on a pink background. 
+              It was so pink that I couldn't help myself I had to use it. I remember when I first showed my teacher 
+              she asked if I liked pink. I guess she was surprised by the pinkness that she saw before her. 
+               </div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="image/img13.jpg" style="width:100%" alt="Inside the pink booklet this page displaying pink paint colours.">
+            <div class="text"> When I was researching for this project I found that many companies use well decorated rooms 
+                painted in the colour with swatches of colours that are similar or match the colour. This does look nice, 
+                however I didn't just want nice rooms in the colour. I wanted to create a focus on one colour and use pictures 
+                that are very that colour. So in this case very pink. 
+                 </div>
+          </div>
+
+          <div class="mySlides fade">
+            <img src="image/img14.jpg" style="width:60%" alt="blue booklet has an image of a jelly fish. The cover reads life is better in blue.">
+            <div class="text"> I really enjoyed making the booklet so I did it again but this time in blue. I found an
+                image of a jelly fish that screamed blue. This was not originally part of what I handed this was something I 
+                did after the fact.
+                 </div>
+          </div>
+  
+          <div class="mySlides fade">
+              <img src="image/img15.jpg" style="width:100%" alt="Inside blue booklet this page displaying blue paint colours.">
+              <div class="text"> the inside of this book is very similar in layout of the other booklet. The design of 
+                  the booklets is very clean. The top corners have a cut out that parallels the triangle in the logo. 
+                  this cut out can be found on other minerals as well.
+                   </div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="image/img16.jpg" style="width:100%" alt="Paint chip designs has colour scheme chips and single colours.">
+                <div class="text"> Another part of this assigned was to create paint chips. These are about the size 
+                    of a business card and I looked at real paint chips to understand what kind of thing I may need to 
+                    put on them. I made single paint chips with a top corner cut out. I also made colour scheme chip. these
+                    have a four colours that look nice together. 
+                     </div>
+              </div>
+      
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+      
+
+      <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        
+        // Next/previous controls
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        // Thumbnail image controls
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1} 
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none"; 
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block"; 
+          dots[slideIndex-1].className += " active";
+        }
+
+        function showDis() {
+            let show = document.getElementById("descrText");
+            if (show.style.display === "none") {
+             show.style.display = "block";
+            } else {
+             show.style.display = "none";
+            }  
+        }
+
+        </script>
     </body>
+</main>
 </html>
