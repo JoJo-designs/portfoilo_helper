@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Monster Cards</title>
+    </head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <main>
+    <body>
+        <button class="exit" onclick="self.close()">X</button>
+        <div class="descr">
+        <h1 class="title">Monster Cards</h1>
+        <button class="displayDes" onClick="showDis()">+</button> 
+            <div id="descrText">
+            
+            <p class="showText">I completed this project after I had graduated college. The goal was to 
+              create a set of flash cards about a topic that would be interesting. I like spooky stuff and I 
+              create a set of card on monsters from around the world. Each card has an illustration
+              of what the creature may looks like based on descriptions and text about the legend.</p>
+
+            <p class="showText"> The cards in black and white with shades of gray. The illustrations were 
+              drawn by myself and are made up of two components. The illustration of the monsters which are 
+              unique to each card. The second a frame which would be a representation of the environment the 
+              monster would be found in. the cave frame for cave dwelling monsters. these frames are not unique 
+              to each card and I reused the same three frames. doing this saved time and created a layed effect in 
+              the images. the frames all have a tattered ribbon on the bottom the display the monsters name in a 
+              black letter font</p>
+
+            <p class="showText"> The back of the cards are simple an clean. The monsters name is displayed at the 
+              top of the page and under that is the palace the legend originated from. There is also a short paragraph 
+              about the monster and then another short text that may offer a real world explanation on how the legend 
+              came to be. 
+            </p>
+
+            </div> 
+        </div>
+
+        
+         <!-- Slideshow container -->
+    <div class="slideshow-container">
+          <!-- The dots/circles -->
+      
+          <div  class="dotContainer">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+        <span class="dot" onclick="currentSlide(4)"></span> 
+      </div>
+    
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+          <img src="image/img25.jpg" style="width:80%" alt="The front and back of one of the flash card. It the the Grootslang card.">
+          <div class="text">This is one of the cards. The monster depicted is the Grootslang. believed to be a combination of a snake and 
+            elephant. The creature is said to dwell in a cave in south africa that locals claim is full of diamonds. The card uses the cave
+            frame. 
+          </div>
+        </div>
+      
+        <div class="mySlides fade">
+          <img src="image/img27.jpg" style="width:80%" alt="Some of the monster illustration before they were vectorized.">
+          <div class="text"> I draw the illustration with paper and ink. each one is 4 inchs by two inchs. After I scanned them into the
+             computer and vectorized them. which I did so I could remove the background easily. After I could layer them under the frame nicely.
+          </div>
+        </div>
+      
+       <div class="mySlides fade">
+          <img src="image/img28.jpg" style="width:80%" alt="digital 3D rendering of the box the cards would come in.">
+          <div class="text"> This 3D rendering of the box shows what the box would look like. unlike most card boxes
+            that open at the top this one is a two piece design with a top and bottom half.
+               </div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="image/img26.jpg" style="width:100%" alt="The finished product.">
+            <div class="text"> This is the final real life cards. The image shows the cards some fronts and some back and the box.
+                 </div>
+          </div>
+
+
+      
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+      
+
+      <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        
+        // Next/previous controls
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        // Thumbnail image controls
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1} 
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none"; 
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block"; 
+          dots[slideIndex-1].className += " active";
+        }
+
+        function showDis() {
+            let show = document.getElementById("descrText");
+            if (show.style.display === "none") {
+             show.style.display = "block";
+            } else {
+             show.style.display = "none";
+            }  
+        }
+
+        </script>
+    </body>
+</main>
+</html>
