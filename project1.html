@@ -10,7 +10,7 @@
         <button class="exit" onclick="self.close()">X</button>
         <div class="descr">
         <h1 class="title">Colour Book</h1>
-        <button class="displayDes" onClick="showDis()">+</button> 
+        <button class="displayDes" id="showBtn" onClick="showDis()">+</button> 
             <div id="descrText">
             
             <p class="showText" >The task was to create a coffee table style book about a topic that 
@@ -102,10 +102,13 @@
 
         function showDis() {
             let show = document.getElementById("descrText");
+            let button = document.getElementById("showBtn")
             if (show.style.display === "none") {
              show.style.display = "block";
+             button.textContent = "-"
             } else {
              show.style.display = "none";
+             button.textContent = "+"
             }  
         }
 

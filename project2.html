@@ -10,7 +10,7 @@
         <button class="exit" onclick="self.close()">X</button>
         <div class="descr">
         <h1 class="title">Decora Home</h1>
-        <button class="displayDes" onClick="showDis()">+</button> 
+        <button class="displayDes" id="showBtn" onClick="showDis()">+</button> 
             <div id="descrText">
             
             <p class="showText">The goal of this student project was to create the branding for a high end home 
@@ -52,7 +52,7 @@
         <div class="mySlides fade">
           <img src="image/img11.jpg" style="width:45%" alt="a poster that had a blue and white room and the decora logo plus a list of services.">
           <div class="text">This simple design was mostly just for my portfolio website. I am using it as the thumbnail 
-              image for this project. I liked the way it trued out so I decided to display it alone with everything else.
+              image for this project. I liked the way it turned out so I decided to display it alone with everything else.
               I think it would be good to use as a poster that is hung in the stores front window.
           </div>
         </div>
@@ -139,10 +139,13 @@
 
         function showDis() {
             let show = document.getElementById("descrText");
+            let button = document.getElementById("showBtn")
             if (show.style.display === "none") {
              show.style.display = "block";
+             button.textContent = "-"
             } else {
              show.style.display = "none";
+             button.textContent = "+"
             }  
         }
 
