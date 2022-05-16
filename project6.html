@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nintendo Lux stationery</title>
+    </head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <main>
+    <body>
+        <button class="exit" onclick="self.close()">X</button>
+        <div class="descr">
+        <h1 class="title">Nintendo Lux Stationery Set</h1>
+        <button class="displayDes" id="showBtn" onClick="showDis()">+</button> 
+            <div id="descrText">
+            
+            <p class="showText"> I love playing video games and when I had a chance to create a 
+                luxury stationery set for any company I wanted. The choose was easy I did nintendo. 
+                When I made this project the nintendo switch had only been out for about a year. This
+                is purely a fan piece and is not real.
+            </p>
+
+            <p class="showText"> Being a luxury stationery set it needed to be super fancy. It can't 
+                be seen in these mockups but it would have lots of features like metallic inks and
+                embossing. It would also be printed on a thick card stock.  
+            </p>
+
+            <p class="showText"> I had a lot of fun with this project. It was very enjoyable.
+                I was able to put down my love of video games on a school project which was cool.
+                I did make a few edits from the original design. 
+            </p>
+
+            </div> 
+        </div>
+
+        
+         <!-- Slideshow container -->
+    <div class="slideshow-container">
+          <!-- The dots/circles -->
+      
+          <div  class="dotContainer">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+      </div>
+    
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+          <img src="image/img48.jpg" style="width:90%" alt="A layout displaying the letter head envelop and business cards">
+          <div class="text">This layout displays all the part in one picture. The letter head has an image of mario in the bottom
+              corner. This would be embossed and painted in a metallic red ink. on the back of the letter head is a design that 
+              features images for some of nintendo's bigger game titles like the legend of zelda, mario and smash bros. (the key chain 
+              wasn't made by me and is just the fill the awkward space).
+          </div>
+        </div>
+      
+        <div class="mySlides fade">
+          <img src="image/img49.jpg" style="width:80%" alt="business card shaped like the switches joy cons">
+          <div class="text"> One of the reasons I choose to use nintendo for this project was because I thought the switch 
+              unique detachable controllers would make cool business cards (I was right these are really cool). The cards come 
+              in a left and right variety matching the game system. The buttons are embossed to add texture and the die cut on 
+              the top of the card give the cards the shape of the joy cons.
+          </div>
+        </div>
+      
+       <div class="mySlides fade">
+          <img src="image/img50.jpg" style="width:100%" alt="The envelops.">
+          <div class="text"> Inside the envelops have the same patten as the back of the letter head.
+               </div>
+        </div>
+
+
+      
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+      
+
+      <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        
+        // Next/previous controls
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        // Thumbnail image controls
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1} 
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none"; 
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block"; 
+          dots[slideIndex-1].className += " active";
+        }
+
+        function showDis() {
+            let show = document.getElementById("descrText");
+            let button = document.getElementById("showBtn")
+            if (show.style.display === "none") {
+             show.style.display = "block";
+             button.textContent = "-"
+            } else {
+             show.style.display = "none";
+             button.textContent = "+"
+            }  
+        }
+
+        </script>
+    </body>
+</main>
+</html>
